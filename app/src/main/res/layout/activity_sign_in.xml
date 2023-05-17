@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".SignInActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="223dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="325dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/et_custom"
+            android:hint=" 아이디"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="325dp"
+            android:layout_height="50dp"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/et_custom"
+            android:hint=" 비밀번호"
+            android:inputType="textPassword"
+            android:singleLine="false" />
+
+        <android.widget.Button
+            android:id="@+id/btSignIn"
+            android:layout_width="325dp"
+            android:layout_height="50dp"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bt_custom"
+            android:text="로그인"
+            android:textColor="#384C22"
+            android:textSize="16sp" />
+
+        <android.widget.Button
+            android:id="@+id/btSignIn2"
+            android:layout_width="325dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_custom"
+            android:text="카카오톡 로그인"
+            android:textColor="#384C22" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btFindId2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:text="@string/findId"
+            android:textColor="#505050"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btFindId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:text="@string/findId"
+            android:textColor="#505050"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
