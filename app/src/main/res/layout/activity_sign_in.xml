@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -44,7 +45,7 @@
             android:singleLine="false" />
 
         <android.widget.Button
-            android:id="@+id/btSignIn"
+            android:id="@+id/btnSignIn"
             android:layout_width="325dp"
             android:layout_height="50dp"
 
@@ -56,7 +57,7 @@
             android:textSize="16sp" />
 
         <android.widget.Button
-            android:id="@+id/btSignIn2"
+            android:id="@+id/btnSignInKaKao"
             android:layout_width="325dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
@@ -74,7 +75,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btFindId2"
+            android:id="@+id/btnFindId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00FFFFFF"
@@ -83,13 +84,15 @@
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/btFindId"
+            android:id="@+id/btnSignUp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:text="@string/findId"
+            android:text="회원가입"
             android:textColor="#505050"
             android:textSize="15sp" />
+
     </LinearLayout>
 
 </LinearLayout>
