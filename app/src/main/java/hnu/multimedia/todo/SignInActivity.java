@@ -35,7 +35,8 @@ public class SignInActivity extends AppCompatActivity {
                     Toast.makeText(SignInActivity.this, "비밀번호를 입력하세요.", Toast.LENGTH_LONG).show();
                     return;
                 }
-                startActivity(intent);
+                if(etId.getText().toString().equals("aaa") && etPassword.getText().toString().equals("aaa"))
+                    startActivity(intent);
             }
         });
 
