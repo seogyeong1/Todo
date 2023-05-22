@@ -26,20 +26,12 @@
 
             <EditText
 
-                android:layout_width="match_parent"
+                android:layout_width="376dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="이름"
                 android:inputType="textPersonName"
                 android:textSize="20sp" />
-
-            <View
-                android:id="@+id/view3"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#616161" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -61,14 +53,6 @@
                 android:layout_height="wrap_content"
                 android:text="중복이 아닙니다."
                 android:textSize="15sp" />
-
-            <View
-                android:id="@+id/view4"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#616161" />
 
             <TextView
                 android:layout_width="match_parent"
