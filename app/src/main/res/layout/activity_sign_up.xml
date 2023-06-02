@@ -21,29 +21,6 @@
             android:orientation="vertical">
 
             <TextView
-
-                android:id="@+id/tvName"
-                style="@style/tvFieldSize"
-                android:layout_marginTop="20dp"
-                android:text="이름"
-                android:textSize="18sp" />
-
-            <EditText
-
-                android:id="@+id/etName"
-                style="@style/tvFieldSize"
-                android:layout_width="380dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:autofillHints=""
-                android:background="@drawable/et_outline"
-                android:ems="10"
-                android:hint="이름"
-                android:inputType="textPersonName"
-                android:padding="10dp"
-                android:textSize="20sp" />
-
-            <TextView
                 android:id="@+id/tvID"
                 style="@style/tvFieldSize"
                 android:layout_marginTop="20dp"
@@ -135,7 +112,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/et"
+                android:id="@+id/etNickname"
                 style="@style/tvFieldSize"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/et_outline"
