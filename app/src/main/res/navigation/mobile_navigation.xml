@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="hnu.multimedia.todo.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_team"
+        android:name="hnu.multimedia.todo.ui.team.TeamFragment"
+        android:label="@string/title_team"
+        tools:layout="@layout/fragment_team" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="hnu.multimedia.todo.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_individual"
+        android:name="hnu.multimedia.todo.ui.individual.IndividualFragment"
+        android:label="@string/title_individual"
+        tools:layout="@layout/fragment_individual" />
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="hnu.multimedia.todo.ui.individual.IndividualFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_individual" />
 </navigation>

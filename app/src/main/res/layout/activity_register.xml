@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignUpActivity"
+    tools:context=".RegisterActivity"
     tools:ignore="DuplicateIds">
 
     <ScrollView
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="Button" />
+                    android:text="중복확인" />
             </LinearLayout>
 
             <TextView
@@ -195,9 +195,17 @@
                         android:layout_weight="1"
                         android:foregroundGravity="right"
                         android:gravity="right"
-                        android:text="Button" />
+                        android:text="중복확인" />
 
                 </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etRegisterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="ㅁ"
+                    android:inputType="textPersonName" />
 
             </LinearLayout>
 

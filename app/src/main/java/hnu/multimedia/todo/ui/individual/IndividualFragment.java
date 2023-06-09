@@ -1,4 +1,4 @@
-package hnu.multimedia.todo.ui.dashboard;
+package hnu.multimedia.todo.ui.individual;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import hnu.multimedia.todo.databinding.FragmentDashboardBinding;
+import hnu.multimedia.todo.databinding.FragmentIndividualBinding;
 
-public class DashboardFragment extends Fragment {
+public class IndividualFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentIndividualBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        IndividualViewModel notificationsViewModel =
+                new ViewModelProvider(this).get(IndividualViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentIndividualBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
