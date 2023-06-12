@@ -5,4 +5,19 @@
         <item name="android:layout_width">380dp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
+    <style name="scheduleOfDateCell">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="DateCell">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

@@ -4,16 +4,22 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class IndividualViewModel extends ViewModel {
+import java.util.ArrayList;
 
-    private final MutableLiveData<String> mText;
+public class IndividualViewModel extends ViewModel {
+    private final MutableLiveData<ArrayList<TaskIndividualItem>> taskList;
 
     public IndividualViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        taskList = new MutableLiveData<>();
+        ArrayList<TaskIndividualItem> _list = new ArrayList<>();
+
+        for (int i = 0 ; i < 10 ; i ++) {
+            _list.add(new TaskIndividualItem(String.valueOf(i)));
+        }
+        taskList.setValue(_list);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<ArrayList<TaskIndividualItem>> getTaskList() {
+        return taskList;
     }
 }

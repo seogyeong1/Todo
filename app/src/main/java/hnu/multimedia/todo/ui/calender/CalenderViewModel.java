@@ -1,14 +1,14 @@
-package hnu.multimedia.todo.ui.setting;
+package hnu.multimedia.todo.ui.calender;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SettingViewModel extends ViewModel {
+public class CalenderViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public SettingViewModel() {
+    public CalenderViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }

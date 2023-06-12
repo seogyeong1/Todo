@@ -1,29 +1,28 @@
-package hnu.multimedia.todo.ui.setting;
+package hnu.multimedia.todo.ui.calender;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import hnu.multimedia.todo.databinding.FragmentSettingBinding;
+import hnu.multimedia.todo.databinding.FragmentCalenderBinding;
 
-public class SettingFragment extends Fragment {
 
-    private FragmentSettingBinding binding;
+public class CalenderFragment extends Fragment {
+
+    private FragmentCalenderBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SettingViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(SettingViewModel.class);
+        CalenderViewModel dashboardViewModel =
+                new ViewModelProvider(this).get(CalenderViewModel.class);
 
-        binding = FragmentSettingBinding.inflate(inflater, container, false);
+        binding = FragmentCalenderBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
         return root;
     }
 

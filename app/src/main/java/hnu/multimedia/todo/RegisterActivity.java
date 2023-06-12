@@ -1,19 +1,13 @@
 package hnu.multimedia.todo;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,9 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
         etPasswordTest = findViewById(R.id.etPasswordTest);
         etNickname = findViewById(R.id.etNickname);
         etRegisterEmail = findViewById(R.id.etRegisterEmail);
-        btnEmailCheck = findViewById(R.id.btnEmailCheck);
-        etEmail = findViewById(R.id.etEmail);
-        spnEmail = findViewById(R.id.spnEmail);
 
         // 아이디 중복 검사
         TextView tvDuplication = findViewById(R.id.tvDuplication);
@@ -86,39 +77,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        // TODO: 이메일 중복 검사 + 스피너 직접 입력 선택 시 editText 나오기
-
-
-        btnEmailCheck.setOnClickListener(v -> {
-            if (etEmail.getText().length() < 1) {
-                Toast.makeText(RegisterActivity.this, "이메일을 입력하세요", Toast.LENGTH_LONG).show();
-                return;
-            }
-            if(!spnEmail.getSelectedItem().toString().contains("com") &&
-                    !spnEmail.getSelectedItem().toString().contains("net")) {
-                Toast.makeText(RegisterActivity.this, "이메일을 입력하세요", Toast.LENGTH_LONG).show();
-                return;
-            }
-            isDidEmailCheck = true;
-        });
-
-        // TODO: emil + @ + Spinner 을 통해 이메일 중복 확인
-        spnEmail.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         //TODO: 회원 가입 버튼 눌렀을 시 중복 검사 통과 확인 및 패스워드 일치하는지 확인
        Button btnJoin = findViewById(R.id.btnJoin);
        btnJoin.setOnClickListener(v -> {
-
            // 아이디 입력을 안 했을 시
            if(etID.getText().toString().length() < 1) {
                Toast.makeText(RegisterActivity.this, "아이디를 입력하세요", Toast.LENGTH_LONG).show();
@@ -138,37 +100,9 @@ public class RegisterActivity extends AppCompatActivity {
                return;
            }
 
-           // 이메일 입력 안 했을 시
-           if (etEmail.getText().length() < 1) {
-               Toast.makeText(RegisterActivity.this, "이메일을 입력하세요", Toast.LENGTH_LONG).show();
-               return;
-           }
-           if(!spnEmail.getSelectedItem().toString().contains("com") &&
-                   !spnEmail.getSelectedItem().toString().contains("net")) {
-               Toast.makeText(RegisterActivity.this, "이메일을 입력하세요2", Toast.LENGTH_LONG).show();
-               return;
-           }
-
-           // 중복검사
-          if(isDidEmailCheck && isDidPasswordCheck //&& isDidIdCheck
-           && etNickname.getText().length() > 0) {
-               Intent intent= new Intent(RegisterActivity.this, MainActivity.class);
-               startActivity(intent);
-           } else if (!isDidIdCheck) {
-              Toast.makeText(RegisterActivity.this, "아이디 중복 검사", Toast.LENGTH_LONG).show();
-          } else if(!isDidPasswordCheck) {
-              Toast.makeText(RegisterActivity.this, "비밀번호 일치 검사", Toast.LENGTH_LONG).show();
-          } else if(!isDidEmailCheck) {
-              Toast.makeText(RegisterActivity.this, "이메일 중복 검사", Toast.LENGTH_LONG).show();
-          } else {
-              Toast.makeText(RegisterActivity.this, "이메일을 입력하세요", Toast.LENGTH_LONG).show();
-
-          }
-
-          // TODO: EMAIL StringBuilder 타입으로 변경
            //TODO: 회원가입 후 Login Activity가 아닌 Home Activity로 이동하는 문제 해결
            FirestoreRepository.getInstance().requestUserRegister(
-                   etRegisterEmail.getText().toString(),
+                   etID.getText().toString(),
                    etPassword.getText().toString(),
                    (result , message) -> {
                        if(result) {
@@ -183,7 +117,6 @@ public class RegisterActivity extends AppCompatActivity {
                        }
                   }
            );
-
        });
     }
 }

@@ -4,16 +4,23 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+
 public class TeamViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<ArrayList<TaskTeamItem>> taskList;
 
     public TeamViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        taskList = new MutableLiveData<>();
+        ArrayList<TaskTeamItem> _list = new ArrayList<>();
+
+        for (int i = 0 ; i < 10 ; i ++) {
+            _list.add(new TaskTeamItem(String.valueOf(i)));
+        }
+        taskList.setValue(_list);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<ArrayList<TaskTeamItem>> getTaskList() {
+        return taskList;
     }
 }

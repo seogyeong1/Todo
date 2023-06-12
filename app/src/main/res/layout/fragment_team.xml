@@ -4,19 +4,761 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.team.TeamFragment">
+    tools:context=".ui.team.teamFragment">
 
     <TextView
-        android:id="@+id/team"
-        android:layout_width="match_parent"
+        android:id="@+id/team_tvTeamName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="15dp"
+        android:text="팀 이름"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="15dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/team_tvTeamName"
+        app:layout_constraintBottom_toBottomOf="@id/team_tvTeamName">
+
+        <ImageView
+            android:id="@+id/team_ivMember1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:layout_weight="1"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/team_ivMember2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:layout_weight="1"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/team_ivMember3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:layout_weight="1"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/team_ivMember4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:layout_weight="1"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/team_ivMember5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:layout_weight="1"
+            tools:src="@tools:sample/avatars" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/team_tvTeamName">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="개인"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listTodoIndividual"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvIndividual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="팀"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listTodoTeam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/mainGreen">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="MON"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="TUE"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="WED"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="THU"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="FRI"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="SAT"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="SUN"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llMon0"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/team_calendar_tvMonDate0"
+                    style="@style/DateCell"
+                    android:text="1"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llMonList0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvMonList0_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="Test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvMonList0_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvMonList0_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llTue0"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvTueDate0"
+                    style="@style/DateCell"
+                    android:text="2"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llTueList0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvTueList0_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvTueList0_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvTueList0_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llWed0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvWedDate0"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llWedList0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvWedList0_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvWedList0_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvWedList0_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llThu0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvThuDate0"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llThuList0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvThuList0_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvThuList0_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvThuList0_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llFri0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvFriDate0"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llFriList0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvFriList0_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvFriList0_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvFriList0_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llSat0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvSatDate0"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llSatList0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSatList0_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSatList0_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSatList0_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llSun0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvSunDate0"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llSunList0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSunList0_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSunList0_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSunList0_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llMon1"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/team_calendar_tvMonDate1"
+                    style="@style/DateCell"
+                    android:text="8"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llMonList1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvMonList1_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvMonList1_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvMonList1_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llTue1"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvTueDate1"
+                    style="@style/DateCell"
+                    android:text="9"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llTueList1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvTueList1_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvTueList1_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvTueList1_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llWed1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvWedDate1"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llWedList1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvWedList1_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvWedList1_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvWedList1_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llThu1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvThuDate1"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="11"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llThuList1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvThuList1_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvThuList1_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvThuList1_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llFri1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvFriDate1"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llFriList1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvFriList1_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvFriList1_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvFriList1_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llSat1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvSatDate1"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="13"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llSatList1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSatList1_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSatList1_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSatList1_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/team_calendar_llSun1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_calendar_tvSunDate1"
+                    style="@style/DateCell"
+                    android:layout_height="wrap_content"
+                    android:text="14"
+                    android:textColor="@color/normalGray" />
+
+                <LinearLayout
+                    android:id="@+id/team_calendar_llSunList1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSunList1_0"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray"
+                        android:text="test" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSunList1_1"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+
+                    <TextView
+                        android:id="@+id/team_calendar_tvSunList1_2"
+                        style="@style/scheduleOfDateCell"
+                        android:background="@color/hintGray" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

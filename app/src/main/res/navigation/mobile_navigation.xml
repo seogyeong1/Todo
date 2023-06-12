@@ -23,8 +23,8 @@
         android:label="@string/title_individual"
         tools:layout="@layout/fragment_individual" />
     <fragment
-        android:id="@+id/navigation_setting"
-        android:name="hnu.multimedia.todo.ui.individual.IndividualFragment"
-        android:label="@string/title_setting"
-        tools:layout="@layout/fragment_individual" />
+        android:id="@+id/calenderFragment"
+        android:name="hnu.multimedia.todo.ui.calender.CalenderFragment"
+        android:label="fragment_calender"
+        tools:layout="@layout/fragment_calender" />
 </navigation>

@@ -4,16 +4,23 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+
 public class HomeViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<ArrayList<TaskItem>> taskList;
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        taskList = new MutableLiveData<>();
+        ArrayList<TaskItem> _list = new ArrayList<>();
+
+        for (int i = 0 ; i < 10 ; i ++) {
+            _list.add(new TaskItem(String.valueOf(i)));
+        }
+        taskList.setValue(_list);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<ArrayList<TaskItem>> getTaskList() {
+        return taskList;
     }
 }

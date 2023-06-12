@@ -4,11 +4,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class FirestoreRepository {
     public static final String COLLECTION_USER = "user";
@@ -28,9 +24,8 @@ public class FirestoreRepository {
         return firestoreRepository;
     }
 
-    public void requestUserRegister(String email, String password, BiConsumer<Boolean, String> biconsumer) {
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-
+    public void requestUserRegister(String id, String password, BiConsumer<Boolean, String> biconsumer) {
+        auth.createUserWithEmailAndPassword(id+"@todoapp.com", password).addOnCompleteListener(task -> {
             if(task.isSuccessful()) {
                 FirebaseUser currentUser = auth.getCurrentUser();
                 String uid = currentUser.getUid();
@@ -48,8 +43,19 @@ public class FirestoreRepository {
         firestore.collection(COLLECTION_USER).document(uid).set(user);
     }
 
-    public void requestUserLogin(String id, String password, Consumer<String> consumer) {
+    public void requestUserLogin(String id, String password, BiConsumer<Boolean, String> biConsumer) {
+        auth.signInWithEmailAndPassword(id+"@todoapp.com", password).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                FirebaseUser currentUser = auth.getCurrentUser();
+                String uid = currentUser.getUid();
+                biConsumer.accept(true, auth.getUid());
 
+            }
+            else {
+                biConsumer.accept(false, task.getException().getMessage());
+            }
+        });
     }
+
 }
 
